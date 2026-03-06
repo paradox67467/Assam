@@ -1,0 +1,2779 @@
+<!DOCTYPE html>
+<!--
+=============================================================
+  ASSAM WEBSITE — IMAGE GUIDE
+=============================================================
+  Place these image files in the SAME FOLDER as this HTML file.
+  The website shows a beautiful emoji/gradient fallback if any
+  image is missing — so all images are optional!
+
+  HERO SECTION:
+    hero.jpg          →  Full-screen hero background (landscape of Assam)
+
+  ABOUT SECTION:
+    about.jpg         →  A scenic Assam landscape or Guwahati skyline
+
+  NATURE CARDS:
+    brahmaputra.jpg   →  The Brahmaputra River
+    kaziranga.jpg     →  Kaziranga National Park / rhinos
+    orchid.jpg        →  Foxtail orchid or flowers
+    manas.jpg         →  Manas Wildlife Sanctuary / elephants
+    forest.jpg        →  Assam forest / greenery
+
+  CULTURE TABS:
+    bihu.jpg          →  Bihu dance performers
+    sattriya.jpg      →  Sattriya classical dance
+    silk.jpg          →  Assam Muga silk / weaving
+    namghar.jpg       →  Namghar or Majuli Satra
+    gamosa.jpg        →  Gamosa cloth / weaving
+
+  RECOMMENDED IMAGE SIZE:  1200×800px or larger, JPG or PNG
+  TIP: You can also use .png files — just rename them to .jpg
+       or change the src="" in the HTML to match your file name.
+=============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assam — Land of the Red River & Blue Hills</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Teko:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --forest: #2d6a28;
+      --forest-light: #3d8a35;
+      --amber: #b5721a;
+      --amber-light: #d4922e;
+      --cream: #faf6ef;
+      --cream-mid: #f0e8d8;
+      --cream-dark: #e4d5bc;
+      --earth: #5c3d1e;
+      --earth-light: #8b5e3c;
+      --river: #1a4a6e;
+      --river-light: #2d6fa0;
+      --ink: #1e1a14;
+      --ink-light: #3d3328;
+      --text-mid: #6b5a48;
+      --white: #ffffff;
+      --border: #ddd0bb;
+      --section-alt: #f5ede0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* IMAGE HANDLING */
+    .section-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-fallback {
+      display: none;
+      font-size: 90px;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-emoji-fallback {
+      display: none;
+      font-size: 80px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .culture-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .culture-emoji-fallback {
+      display: none;
+      font-size: 130px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* NAV — white/cream on light */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 60px;
+      background: rgba(250, 246, 239, 0.5);
+      backdrop-filter: blur(8px);
+      border-bottom: none;
+      transition: all 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(250, 246, 239, 0.95);
+      padding: 14px 60px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(90, 60, 20, 0.08);
+    }
+
+    .nav-logo {
+      font-family: 'Teko', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--amber);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Teko', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--amber);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--amber);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(250, 246, 239, 0.98);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: 'Teko', sans-serif;
+      font-size: 30px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--amber);
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 24px;
+      right: 30px;
+      font-size: 32px;
+      color: var(--ink);
+      background: none;
+      border: none;
+    }
+
+    /* HERO — keep dark/lush for visual impact, rest is light */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(161, 165, 159, 0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 30%, rgba(26, 74, 110, 0.2) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, rgba(181, 114, 26, 0.2) 0%, transparent 50%), linear-gradient(160deg, #1a2e14 0%, #0e1e28 40%, #2a1a08 100%);
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .hero-bg-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(15, 30, 10, 0.72) 0%, rgba(10, 20, 30, 0.65) 40%, rgba(30, 15, 5, 0.72) 100%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(181, 114, 26, 0.04) 50px, rgba(181, 114, 26, 0.04) 51px), repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(45, 106, 40, 0.04) 50px, rgba(45, 106, 40, 0.04) 51px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Teko', sans-serif;
+      font-size: 13px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--amber-light);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(50px, 9vw, 116px);
+      font-weight: 900;
+      line-height: 0.9;
+      color: #faf6ef;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.5s forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--amber-light);
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(14px, 1.8vw, 19px);
+      font-style: italic;
+      color: rgba(250, 246, 239, 0.65);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.7s forwards;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.9s forwards;
+    }
+
+    .btn-primary {
+      font-family: 'Teko', sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 40px;
+      background: var(--amber);
+      color: #fff;
+      border: none;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--amber-light);
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+
+    .btn-primary:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn-primary span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-outline {
+      font-family: 'Teko', sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 40px;
+      border: 1px solid rgba(250, 246, 239, 0.4);
+      color: #faf6ef;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--amber-light);
+      color: var(--amber-light);
+      background: rgba(181, 114, 26, 0.1);
+    }
+
+
+    /* STATS — warm amber strip */
+    .stats-strip {
+      background: var(--amber);
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Teko', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Lora', serif;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 100px 60px;
+    }
+
+    .section-label {
+      font-family: 'Teko', sans-serif;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--amber);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 62px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .section-desc {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      max-width: 680px;
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .about-img-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 110%;
+      overflow: hidden;
+    }
+
+    .about-img-frame::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid var(--cream-dark);
+      z-index: 0;
+    }
+
+    .about-img-placeholder {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #d4ead0 0%, #b8d8b0 40%, #c8dce8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 90px;
+      z-index: 1;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 120px;
+      height: 120px;
+      background: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .about-badge-num {
+      font-family: 'Teko', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .about-badge-text {
+      font-family: 'Lora', serif;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .about-body {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .fact-item {
+      padding: 16px 18px;
+      border-left: 2px solid var(--amber);
+      background: var(--cream);
+    }
+
+    .fact-label {
+      font-family: 'Teko', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+
+    .fact-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    /* NATURE — cream background like other sections */
+    #nature {
+      background: var(--cream);
+    }
+
+    #nature .section-title {
+      color: var(--ink);
+    }
+
+    #nature .section-desc {
+      color: var(--text-mid);
+    }
+
+    #nature .section-label {
+      color: var(--amber);
+    }
+
+    #nature .section-label::before {
+      background: var(--amber);
+    }
+
+    .nature-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .nature-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .nature-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+
+    .nature-card:first-child {
+      grid-row: span 2;
+      aspect-ratio: auto;
+      min-height: 400px;
+    }
+
+    .nature-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.7s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    .nature-card:hover .nature-card-bg {
+      transform: scale(1.08);
+    }
+
+    .nc1 {
+      background: linear-gradient(135deg, #2a5020, #183010);
+    }
+
+    .nc2 {
+      background: linear-gradient(135deg, #204030, #102818);
+    }
+
+    .nc3 {
+      background: linear-gradient(135deg, #1e4030, #102818);
+    }
+
+    .nc4 {
+      background: linear-gradient(135deg, #163828, #0e2818);
+    }
+
+    .nc5 {
+      background: linear-gradient(135deg, #284018, #182808);
+    }
+
+    .nature-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.05) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 24px;
+      transition: background 0.4s;
+    }
+
+    .nature-card:hover .nature-card-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 60%, transparent 100%);
+    }
+
+    .nature-card-tag {
+      font-family: 'Teko', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber-light);
+      margin-bottom: 6px;
+    }
+
+    .nature-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #faf6ef;
+      margin-bottom: 8px;
+    }
+
+    .nature-card-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(250, 246, 239, 0.65);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s;
+    }
+
+    .nature-card:hover .nature-card-desc {
+      max-height: 120px;
+    }
+
+    /* CULTURE */
+    #culture {
+      background: var(--section-alt);
+    }
+
+    .culture-tabs {
+      display: flex;
+      gap: 0;
+      margin: 48px 0 40px;
+      border-bottom: 2px solid var(--border);
+      overflow-x: visible;
+      flex-wrap: wrap;
+    }
+
+    .culture-tab {
+      font-family: 'Teko', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      background: none;
+      border: none;
+      color: var(--text-mid);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .culture-tab.active,
+    .culture-tab:hover {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+    }
+
+    .culture-panel {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .culture-panel.active {
+      display: block;
+    }
+
+    .culture-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .culture-emoji-display {
+      font-size: 130px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      box-shadow: inset 0 0 40px rgba(181, 114, 26, 0.06);
+    }
+
+    .culture-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .culture-info p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 18px;
+    }
+
+    .culture-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .culture-tag {
+      font-family: 'Teko', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      background: rgba(181, 114, 26, 0.06);
+    }
+
+    /* FESTIVALS */
+    #festivals {
+      background: var(--white);
+    }
+
+    .festivals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .festival-card {
+      padding: 32px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .festival-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+
+    .festival-card:hover {
+      background: var(--white);
+      border-color: var(--amber);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(90, 60, 20, 0.1);
+    }
+
+    .festival-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .festival-icon {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .festival-month {
+      font-family: 'Teko', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+
+    .festival-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .festival-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* WILDLIFE */
+    #wildlife {
+      background: var(--section-alt);
+    }
+
+    .wildlife-hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .wildlife-text p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 22px;
+    }
+
+    .wildlife-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .wstat {
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(90, 60, 20, 0.06);
+    }
+
+    .wstat-num {
+      font-family: 'Teko', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .wstat-label {
+      font-size: 11px;
+      color: var(--text-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Teko', sans-serif;
+    }
+
+    .wildlife-animals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .animal-card {
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .animal-card:hover {
+      background: #f0f8ee;
+      border-color: var(--forest-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(45, 106, 40, 0.1);
+    }
+
+    .animal-emoji {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .animal-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .animal-status {
+      font-family: 'Teko', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .status-endangered {
+      color: #c0392b;
+    }
+
+    .status-vulnerable {
+      color: #d4730a;
+    }
+
+    /* CUISINE */
+    #cuisine {
+      background: var(--white);
+    }
+
+    .cuisine-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .cuisine-intro p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .food-item {
+      padding: 22px 14px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .food-item:hover {
+      background: var(--white);
+      border-color: var(--amber);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(90, 60, 20, 0.1);
+    }
+
+    .food-emoji {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .food-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .food-desc {
+      font-size: 11px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* HISTORY */
+    #history {
+      background: var(--section-alt);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 60px;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--amber) 10%, var(--amber) 90%, transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 48px 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: var(--amber);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(181, 114, 26, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .timeline-item:hover::before {
+      transform: scale(1.8);
+      box-shadow: 0 0 20px rgba(181, 114, 26, 0.6);
+    }
+
+    .timeline-era {
+      font-family: 'Teko', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .timeline-body {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      max-width: 700px;
+    }
+
+    /* PEOPLE */
+    #people {
+      background: var(--white);
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .people-card {
+      padding: 28px 22px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .people-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .people-card:hover {
+      background: var(--white);
+      border-color: var(--amber);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(90, 60, 20, 0.1);
+    }
+
+    .people-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .people-emoji {
+      font-size: 42px;
+      margin-bottom: 14px;
+    }
+
+    .people-group {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .people-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-mid);
+    }
+
+    /* LANGUAGES */
+    #languages {
+      background: var(--section-alt);
+    }
+
+    .lang-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .lang-bar-item {
+      margin-bottom: 20px;
+    }
+
+    .lang-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .lang-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .lang-pct {
+      font-family: 'Teko', sans-serif;
+      font-size: 18px;
+      color: var(--amber);
+    }
+
+    .lang-track {
+      height: 5px;
+      background: var(--border);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lang-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(to right, var(--forest), var(--amber));
+      width: 0;
+      transition: width 1.4s ease;
+      border-radius: 2px;
+    }
+
+    .lang-info p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+
+    /* RELIGION */
+    #religion {
+      background: var(--white);
+    }
+
+    .religion-chart-wrap {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .donut-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto;
+    }
+
+    .donut-svg {
+      transform: rotate(-90deg);
+    }
+
+    .donut-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .donut-total {
+      font-family: 'Teko', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .donut-sub {
+      font-size: 11px;
+      color: var(--text-mid);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: 'Teko', sans-serif;
+    }
+
+    .religion-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .rel-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    .rel-pct {
+      font-family: 'Teko', sans-serif;
+      font-size: 20px;
+      color: var(--amber);
+    }
+
+    /* CRAFTS — use warm parchment tones */
+    #crafts {
+      background: var(--section-alt);
+    }
+
+    .crafts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    .craft-item {
+      position: relative;
+      padding: 36px 28px;
+      overflow: hidden;
+      transition: all 0.4s;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--border);
+    }
+
+    .craft-item:nth-child(1) {
+      background: linear-gradient(135deg, #fdf3e0, #f5e5c0);
+    }
+
+    .craft-item:nth-child(2) {
+      background: linear-gradient(135deg, #edf5ed, #d8eed8);
+    }
+
+    .craft-item:nth-child(3) {
+      background: linear-gradient(135deg, #f0f5f8, #dce8f0);
+    }
+
+    .craft-item:nth-child(4) {
+      background: linear-gradient(135deg, #fdf8e8, #f0e8c8);
+    }
+
+    .craft-item:nth-child(5) {
+      background: linear-gradient(135deg, #eeeaf5, #ddd5ec);
+    }
+
+    .craft-item:nth-child(6) {
+      background: linear-gradient(135deg, #fdeee8, #f5ddd0);
+    }
+
+    .craft-bg-emoji {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 65px;
+      opacity: 0.2;
+      transition: all 0.4s;
+    }
+
+    .craft-item:hover .craft-bg-emoji {
+      opacity: 0.4;
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .craft-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(90, 60, 20, 0.12);
+      border-color: var(--amber);
+    }
+
+    .craft-tag {
+      font-family: 'Teko', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+
+    .craft-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .craft-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-mid);
+    }
+
+    /* NOTABLE FIGURES */
+    #figures {
+      background: var(--white);
+    }
+
+    .figures-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .figure-card {
+      padding: 28px 18px;
+      text-align: center;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .figure-card:hover {
+      background: var(--white);
+      border-color: var(--amber);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(90, 60, 20, 0.1);
+    }
+
+    .figure-avatar {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--forest), var(--amber));
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .figure-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .figure-role {
+      font-family: 'Teko', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+
+    .figure-note {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-mid);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      padding: 60px;
+      border-top: 3px solid var(--amber);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-name {
+      font-family: 'Teko', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--amber-light);
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-sub {
+      font-style: italic;
+      color: rgba(250, 246, 239, 0.45);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 250px;
+    }
+
+    .footer-col-title {
+      font-family: 'Teko', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(250, 246, 239, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--cream);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(250, 246, 239, 0.3);
+    }
+
+    .footer-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(212, 146, 46, 0.6);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    @media (max-width: 1024px) {
+      .section-inner {
+        padding: 80px 40px;
+      }
+
+      .about-grid,
+      .culture-content,
+      .wildlife-hero,
+      .cuisine-layout,
+      .lang-layout,
+      .religion-chart-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .nature-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nature-card:first-child {
+        grid-row: auto;
+      }
+
+      .crafts-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      nav.scrolled {
+        padding: 10px 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .section-inner {
+        padding: 60px 24px;
+      }
+
+      .stats-strip {
+        padding: 14px 24px;
+      }
+
+      .nature-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .crafts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .food-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      footer {
+        padding: 40px 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .wildlife-animals {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" onclick="toggleMenu()">✕</button>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#nature" onclick="toggleMenu()">Nature</a>
+    <a href="#culture" onclick="toggleMenu()">Culture</a>
+    <a href="#festivals" onclick="toggleMenu()">Festivals</a>
+    <a href="#wildlife" onclick="toggleMenu()">Wildlife</a>
+    <a href="#cuisine" onclick="toggleMenu()">Cuisine</a>
+    <a href="#history" onclick="toggleMenu()">History</a>
+    <a href="#people" onclick="toggleMenu()">People</a>
+  </div>
+
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">ASSAM <span>॥</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#nature">Nature</a></li>
+      <li><a href="#culture">Culture</a></li>
+      <li><a href="#festivals">Festivals</a></li>
+      <li><a href="#wildlife">Wildlife</a></li>
+      <li><a href="#cuisine">Cuisine</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#people">People</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-bg-img" id="heroBgImg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Northeastern India &nbsp;·&nbsp; Est. 1950 &nbsp;·&nbsp; Gateway to the Northeast</p>
+      <h1 class="hero-title">Land of the<br><em>Red River</em>&nbsp;&amp; Blue Hills</h1>
+      <p class="hero-subtitle">Where the Brahmaputra breathes life into ancient kingdoms, wild jungles, golden silk, and
+        the world's finest tea.</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary"><span>Explore Assam</span></a>
+        <a href="#nature" class="btn-outline">See Nature</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-num">78,438</div>
+      <div class="stat-label">km² Area</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">31.2M</div>
+      <div class="stat-label">Population</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">35</div>
+      <div class="stat-label">Districts</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">820+</div>
+      <div class="stat-label">Bird Species</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">UNESCO Sites</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">45+</div>
+      <div class="stat-label">Languages</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-img-frame">
+            <div class="about-img-placeholder">
+              <img src="about.jpg" alt="Assam landscape" class="section-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="img-fallback">🌿</span>
+            </div>
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-num">600</div>
+            <div class="about-badge-text">Years Ahom Rule</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <p class="section-label">Introduction</p>
+          <h2 class="section-title">The <em>Gateway</em> to Northeast India</h2>
+          <p class="about-body">Assam is a state in northeastern India, nestled south of the Eastern Himalayas along the
+            Brahmaputra and Barak River valleys — the second largest state in the region by area and the largest by
+            population, home to over 31 million people.</p>
+          <p class="about-body">Connected to the rest of India via the narrow 22-km Siliguri Corridor, Assam shares
+            borders with Bhutan to the north, Bangladesh to the southwest, and five Indian states. Its capital is
+            Dispur, while Guwahati — one of the fastest-growing cities in the world — is the largest urban centre and
+            the true "Gateway to Northeast India."</p>
+          <p class="about-body">Famous for its namesake Assam tea (producing more than half of India's total), Assam
+            silk (a Geographical Indication), extraordinary biodiversity, and ancient cultural traditions rooted in
+            thousands of years of history.</p>
+          <div class="about-facts">
+            <div class="fact-item">
+              <div class="fact-label">Capital</div>
+              <div class="fact-value">Dispur</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Largest City</div>
+              <div class="fact-value">Guwahati</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Official Languages</div>
+              <div class="fact-value">Assamese & Bodo</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">State Flower</div>
+              <div class="fact-value">Foxtail Orchid</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Statehood</div>
+              <div class="fact-value">26 January 1950</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Major River</div>
+              <div class="fact-value">Brahmaputra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NATURE -->
+  <section id="nature">
+    <div class="section-inner">
+      <div class="nature-header">
+        <div class="reveal">
+          <p class="section-label">Natural Beauty</p>
+          <h2 class="section-title">A Land of<br><em>Eternal Green</em></h2>
+        </div>
+        <p class="section-desc reveal" style="max-width:360px">High rainfall, the mighty Brahmaputra, and richly varied
+          terrain — from the Himalayan foothills to oxbow wetlands — create one of the world's most spectacular natural
+          landscapes.</p>
+      </div>
+      <div class="nature-cards">
+        <div class="nature-card reveal">
+          <div class="nature-card-bg nc1">
+            <img src="brahmaputra.jpg" alt="Brahmaputra River" class="card-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span
+              class="card-emoji-fallback">🌊</span>
+          </div>
+          <div class="nature-card-overlay">
+            <div class="nature-card-tag">Lifeline</div>
+            <div class="nature-card-title">The Brahmaputra River</div>
+            <div class="nature-card-desc">One of the world's great rivers, the mighty Brahmaputra is one of India's most
+              powerful and ancient waterways — a braided river up to 16 km wide, creating vast floodplains, wetlands and
+              oxbow lakes across the entire Assam valley.</div>
+          </div>
+        </div>
+        <div class="nature-card reveal reveal-delay-1">
+          <div class="nature-card-bg nc2">
+            <img src="kaziranga.jpg" alt="Kaziranga National Park" class="card-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span
+              class="card-emoji-fallback">🦏</span>
+          </div>
+          <div class="nature-card-overlay">
+            <div class="nature-card-tag">UNESCO World Heritage</div>
+            <div class="nature-card-title">Kaziranga National Park</div>
+            <div class="nature-card-desc">Home to the world's largest population of one-horned Indian rhinoceros — and
+              also Bengal tigers, Asian elephants, wild water buffalo, and hundreds of bird species. A true jewel of
+              global conservation.</div>
+          </div>
+        </div>
+        <div class="nature-card reveal reveal-delay-2">
+          <div class="nature-card-bg nc3">
+            <img src="orchid.jpg" alt="Foxtail Orchid" class="card-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span
+              class="card-emoji-fallback">🌺</span>
+          </div>
+          <div class="nature-card-overlay">
+            <div class="nature-card-tag">Floral Kingdom</div>
+            <div class="nature-card-title">Orchid Paradise</div>
+            <div class="nature-card-desc">Assam is extraordinarily rich in orchid species. The Foxtail orchid is the
+              state flower; Kaziranga National Orchid Park alone showcases over 500 of India's estimated 1,314 orchid
+              species.</div>
+          </div>
+        </div>
+        <div class="nature-card reveal reveal-delay-1">
+          <div class="nature-card-bg nc4">
+            <img src="manas.jpg" alt="Manas Wildlife Sanctuary" class="card-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span
+              class="card-emoji-fallback">🐘</span>
+          </div>
+          <div class="nature-card-overlay">
+            <div class="nature-card-tag">UNESCO World Heritage</div>
+            <div class="nature-card-title">Manas Wildlife Sanctuary</div>
+            <div class="nature-card-desc">At the Bhutan Himalayan foothills, Manas shelters the critically endangered
+              pygmy hog, golden langur, Asian elephants, and clouded leopards within magnificent subtropical forests.
+            </div>
+          </div>
+        </div>
+        <div class="nature-card reveal reveal-delay-2">
+          <div class="nature-card-bg nc5">
+            <img src="forest.jpg" alt="Tropical Rainforest" class="card-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span
+              class="card-emoji-fallback">🎋</span>
+          </div>
+          <div class="nature-card-overlay">
+            <div class="nature-card-tag">Biodiversity Hotspot</div>
+            <div class="nature-card-title">Tropical Rainforests</div>
+            <div class="nature-card-desc">From tropical rainforests to deciduous forests, riverine grasslands, bamboo
+              orchards, and wetlands — Assam is one of the richest biodiversity zones on Earth, with 190+ mammal species
+              and 820+ bird species.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE -->
+  <section id="culture">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Heritage & Tradition</p>
+        <h2 class="section-title">A <em>Hybrid</em> &amp; Syncretic Culture</h2>
+        <p class="section-desc">Born from the assimilation of Austroasiatic, Tibeto-Burman, Indo-Aryan and Tai peoples
+          over millennia — Assamese culture is one of India's richest and most living traditions.</p>
+      </div>
+      <div class="culture-tabs">
+        <button class="culture-tab active" onclick="showTab(this,'bihu')">Bihu</button>
+        <button class="culture-tab" onclick="showTab(this,'sattriya')">Sattriya Dance</button>
+        <button class="culture-tab" onclick="showTab(this,'silk')">Assam Silk</button>
+        <button class="culture-tab" onclick="showTab(this,'namghar')">Namghar & Satra</button>
+        <button class="culture-tab" onclick="showTab(this,'gamosa')">Gamosa</button>
+      </div>
+      <div id="tab-bihu" class="culture-panel active">
+        <div class="culture-content">
+          <div class="culture-emoji-display">
+            <img src="bihu.jpg" alt="Bihu Dance" class="culture-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="culture-emoji-fallback">🥁</span>
+          </div>
+          <div class="culture-info">
+            <h3>Bihu — The Soul of Assam</h3>
+            <p>Bihu is described as the very soul and life of Assam. It is a series of three prominent festivals each
+              associated with a stage in the cultivation of paddy: Rongali (spring sowing, April), Kongali (the barren
+              bihu when fields are lush but barns empty), and Bhogali (post-harvest thanksgiving, January).</p>
+            <p>The Bihu dance, performed by young men and women in colourful traditional attire, and Bihu songs
+              (performed with the Pepa — a horn flute made from buffalo horn) celebrate nature, love, and the cycle of
+              seasons. The day before each Bihu is called Uruka — a night of communal feasting.</p>
+            <div class="culture-tags">
+              <span class="culture-tag">April New Year</span>
+              <span class="culture-tag">Traditional Dance</span>
+              <span class="culture-tag">Pepa Music</span>
+              <span class="culture-tag">Three Seasons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-sattriya" class="culture-panel">
+        <div class="culture-content">
+          <div class="culture-emoji-display">
+            <img src="sattriya.jpg" alt="Sattriya Dance" class="culture-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="culture-emoji-fallback">💃</span>
+          </div>
+          <div class="culture-info">
+            <h3>Sattriya — Indian Classical Dance</h3>
+            <p>Sattriya is one of India's eight classical dance forms, originating in the Vaishnav monasteries (Satras)
+              of Assam. Created by the saint-scholar Srimanta Sankaradeva in the 15th century, it combines elegant
+              movements, devotional music, and dramatic storytelling.</p>
+            <p>The dance is associated with the neo-Vaishnavite Ekasarana Dharma movement. It features elaborate silk
+              costumes, giant masks of deities and mythological beings (especially in the Ankia Naat Bhaona performance
+              tradition), and intricate rhythmic footwork.</p>
+            <div class="culture-tags">
+              <span class="culture-tag">Indian Classical</span>
+              <span class="culture-tag">15th Century</span>
+              <span class="culture-tag">Vaishnavite</span>
+              <span class="culture-tag">Satra Heritage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-silk" class="culture-panel">
+        <div class="culture-content">
+          <div class="culture-emoji-display">
+            <img src="silk.jpg" alt="Assam Silk" class="culture-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="culture-emoji-fallback">🧵</span>
+          </div>
+          <div class="culture-info">
+            <h3>Assam Silk — Liquid Gold</h3>
+            <p>Assam produces three extraordinary types of silk, each a Geographical Indication of India. Muga silk —
+              the natural golden silk unique to Assam and the world — is the most prestigious. Pat silk has a creamy
+              silver lustre, while Eri is used for warm winter garments.</p>
+            <p>The Mekhela Chador (traditional two-piece dress of Assamese women) woven in these silks is a symbol of
+              Assamese identity. Sualkuchi town — known as the "Manchester of Assam" — is the legendary centre of the
+              silk weaving tradition on the Brahmaputra's banks.</p>
+            <div class="culture-tags">
+              <span class="culture-tag">Muga Gold Silk</span>
+              <span class="culture-tag">Pat & Eri Silk</span>
+              <span class="culture-tag">GI Protected</span>
+              <span class="culture-tag">Mekhela Chador</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-namghar" class="culture-panel">
+        <div class="culture-content">
+          <div class="culture-emoji-display">
+            <img src="namghar.jpg" alt="Namghar Satra" class="culture-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="culture-emoji-fallback">🛕</span>
+          </div>
+          <div class="culture-info">
+            <h3>Namghar & Satra — Heart of Community</h3>
+            <p>The Namghar is a community prayer hall central to Assamese village life — created by Srimanta Sankaradeva
+              as part of the egalitarian Ekasarana Dharma movement that broke away from caste barriers and welcomed
+              people of all backgrounds.</p>
+            <p>The larger Satras (Vaishnav monasteries) of Majuli island — the world's largest river island and an
+              emerging UNESCO site — are the most celebrated, serving as living centres of performing arts, manuscript
+              preservation, and the extraordinary Majuli mask-making tradition.</p>
+            <div class="culture-tags">
+              <span class="culture-tag">Prayer Hall</span>
+              <span class="culture-tag">Community Center</span>
+              <span class="culture-tag">Majuli Island</span>
+              <span class="culture-tag">Living Heritage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-gamosa" class="culture-panel">
+        <div class="culture-content">
+          <div class="culture-emoji-display">
+            <img src="gamosa.jpg" alt="Gamosa" class="culture-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="culture-emoji-fallback">🎀</span>
+          </div>
+          <div class="culture-info">
+            <h3>Gamosa — Symbol of Respect</h3>
+            <p>The Gamosa is a white cotton or silk cloth with distinctive red embroidery — the most important cultural
+              symbol of Assam. Offered as a mark of devotion, respect, and friendship at ceremonies, celebrations, and
+              when welcoming honoured guests.</p>
+            <p>Along with Tamulpan (areca nut and betel leaves) and the Xorai (bell-metal ritual vessel), the Gamosa
+              forms the revered trinity of Assamese symbolic culture. The Tamulpan tradition traces its roots to ancient
+              Austric culture and has been followed since time immemorial.</p>
+            <div class="culture-tags">
+              <span class="culture-tag">Cultural Symbol</span>
+              <span class="culture-tag">Red & White</span>
+              <span class="culture-tag">Gift of Respect</span>
+              <span class="culture-tag">Ancient Tradition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FESTIVALS -->
+  <section id="festivals">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Celebrations</p>
+        <h2 class="section-title">A Year Full of <em>Festivals</em></h2>
+        <p class="section-desc">Every season brings a new celebration in Assam. From the joyous spring of Rongali Bihu
+          to the spiritual Me-Dam-Me-Phi — the calendar is alive with colour, music, and devotion.</p>
+      </div>
+      <div class="festivals-grid">
+        <div class="festival-card reveal">
+          <div class="festival-icon">🌸</div>
+          <div class="festival-month">April</div>
+          <div class="festival-name">Rongali Bihu</div>
+          <div class="festival-desc">The most joyous of the three Bihus, celebrating the Assamese New Year and arrival
+            of spring. Marked by Bihu dance, Pepa music, feasting, and Goru Bihu — the ritual bathing of cattle.</div>
+        </div>
+        <div class="festival-card reveal reveal-delay-1">
+          <div class="festival-icon">🌾</div>
+          <div class="festival-month">January</div>
+          <div class="festival-name">Bhogali Bihu</div>
+          <div class="festival-desc">The harvest thanksgiving festival. Celebrated with feasting around bonfires (Meji),
+            community games, and the joy of full granaries. Also called Magh Bihu.</div>
+        </div>
+        <div class="festival-card reveal reveal-delay-2">
+          <div class="festival-icon">🌿</div>
+          <div class="festival-month">Mid-April</div>
+          <div class="festival-name">Bwisagu</div>
+          <div class="festival-desc">The Bodo New Year festival, celebrated simultaneously with Rongali Bihu. Features
+            vibrant traditional dances and the worship of the deity Bathow on the second day.</div>
+        </div>
+        <div class="festival-card reveal">
+          <div class="festival-icon">🌱</div>
+          <div class="festival-month">February</div>
+          <div class="festival-name">Ali-Ai-Ligang</div>
+          <div class="festival-desc">Spring festival of the Mising people marking the start of Ahu paddy cultivation.
+            The name means "sow the seeds" — celebrated with the graceful Gumrag dance on a Wednesday of Fagun.</div>
+        </div>
+        <div class="festival-card reveal reveal-delay-1">
+          <div class="festival-icon">🥁</div>
+          <div class="festival-month">January 27</div>
+          <div class="festival-name">Bushu Dima</div>
+          <div class="festival-desc">Major harvest festival of the Dimasa people celebrated with Khram drums, Muri
+            flutes, and three types of celebration — Jidap, Surem, and Hangsou. The Baidima dance is its centrepiece.
+          </div>
+        </div>
+        <div class="festival-card reveal reveal-delay-2">
+          <div class="festival-icon">👁️</div>
+          <div class="festival-month">January 31</div>
+          <div class="festival-name">Me-Dam-Me-Phi</div>
+          <div class="festival-desc">The Tai-Ahom festival of ancestral veneration. "Me" (offerings), "Dam" (ancestors),
+            "Phi" (gods) — a profound day of remembrance, ritual, and connection with the spirits of the past.</div>
+        </div>
+        <div class="festival-card reveal">
+          <div class="festival-icon">🎭</div>
+          <div class="festival-month">February</div>
+          <div class="festival-name">Rongker (Dehal)</div>
+          <div class="festival-desc">Annual winter festival of the Karbi people, observed to appease local deities and
+            ward off evil spirits. Marks the beginning of the Karbi New Year (Thang thang).</div>
+        </div>
+        <div class="festival-card reveal reveal-delay-1">
+          <div class="festival-icon">🎨</div>
+          <div class="festival-month">Spring</div>
+          <div class="festival-name">Doul Mohutsav</div>
+          <div class="festival-desc">Festival of colours celebrated in Barpeta, synonymous with Holi. Soul-stirring
+            Holigeets — devotional compositions in praise of Lord Krishna — are sung at the famous Barpeta Satra.</div>
+        </div>
+        <div class="festival-card reveal reveal-delay-2">
+          <div class="festival-icon">🏔️</div>
+          <div class="festival-month">June (Annual)</div>
+          <div class="festival-name">Ambubachi Mela</div>
+          <div class="festival-desc">One of India's greatest religious gatherings at the sacred Kamakhya Temple in
+            Guwahati, attracting hundreds of thousands of pilgrims, sadhus, and devotees from across the subcontinent.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WILDLIFE -->
+  <section id="wildlife">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Biodiversity</p>
+        <h2 class="section-title">The <em>Wild</em> Kingdom</h2>
+      </div>
+      <div class="wildlife-hero">
+        <div class="wildlife-text reveal">
+          <p>Assam is one of the richest biodiversity zones in the world. Its tropical rainforests, riverine grasslands,
+            bamboo orchards, and wetlands shelter an extraordinary range of life — much of it found nowhere else on
+            Earth.</p>
+          <p>More than half of the world's entire wild population of the one-horned Indian rhinoceros lives in Assam,
+            primarily at Kaziranga National Park. Assam also has the highest diversity of birds in all of India — over
+            820 species, rising to 946 with subspecies.</p>
+          <p>The state has five National Parks including two UNESCO World Heritage Sites (Kaziranga and Manas), and is
+            the last stronghold for critically endangered species including the pygmy hog, the world's smallest wild
+            pig, and the Ganges river dolphin.</p>
+          <div class="wildlife-stats">
+            <div class="wstat">
+              <div class="wstat-num">820+</div>
+              <div class="wstat-label">Bird Species</div>
+            </div>
+            <div class="wstat">
+              <div class="wstat-num">190+</div>
+              <div class="wstat-label">Mammal Species</div>
+            </div>
+            <div class="wstat">
+              <div class="wstat-num">&gt;50%</div>
+              <div class="wstat-label">World Rhino Pop.</div>
+            </div>
+            <div class="wstat">
+              <div class="wstat-num">5</div>
+              <div class="wstat-label">National Parks</div>
+            </div>
+          </div>
+        </div>
+        <div class="wildlife-animals reveal reveal-delay-2">
+          <div class="animal-card">
+            <div class="animal-emoji">🦏</div>
+            <div class="animal-name">Indian One-horned Rhino</div>
+            <div class="animal-status status-vulnerable">Vulnerable</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🐅</div>
+            <div class="animal-name">Bengal Tiger</div>
+            <div class="animal-status status-endangered">Endangered</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🐘</div>
+            <div class="animal-name">Asian Elephant</div>
+            <div class="animal-status status-endangered">Endangered</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🐒</div>
+            <div class="animal-name">Golden Langur</div>
+            <div class="animal-status status-endangered">Endangered</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🦤</div>
+            <div class="animal-name">Greater Adjutant</div>
+            <div class="animal-status status-endangered">Endangered</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🐬</div>
+            <div class="animal-name">Ganges River Dolphin</div>
+            <div class="animal-status status-endangered">Endangered</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🦬</div>
+            <div class="animal-name">Wild Water Buffalo</div>
+            <div class="animal-status status-endangered">Endangered</div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-emoji">🐗</div>
+            <div class="animal-name">Pygmy Hog</div>
+            <div class="animal-status status-endangered">Critically Endangered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUISINE -->
+  <section id="cuisine">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Food & Flavour</p>
+        <h2 class="section-title">Assamese <em>Cuisine</em></h2>
+      </div>
+      <div class="cuisine-layout">
+        <div class="cuisine-intro reveal">
+          <p>Assamese cuisine is distinctive for its minimal use of spices and its love of fresh, fermented, and smoked
+            ingredients. The two defining flavour principles are <strong
+              style="color:var(--amber);font-weight:600">Khar</strong> (alkaline preparations made from sun-dried banana
+            peel ash) and <strong style="color:var(--amber);font-weight:600">Tenga</strong> (characteristically tangy,
+            sour flavours using tomato, elephant apple, or raw mango).</p>
+          <p>A typical Assamese thali features steamed rice (bhat), lentils (daly), fish stew (masor jool), meat stew,
+            and stir-fried greens. The legendary <em>Bhut Jolokia</em> (Ghost Pepper) — once certified as the world's
+            hottest chilli — is used in traditional meat preparations.</p>
+          <p>Fish curries, smoked meats (Khorika), fermented bamboo shoots (Khorisa), and pitika (mashed preparations of
+            potato, tomato, or fish) are beloved staples. Indigenous communities brew traditional rice beers like Apong,
+            Xaaj, and Sujen — served at festivals and celebrations.</p>
+        </div>
+        <div class="food-grid reveal reveal-delay-2">
+          <div class="food-item">
+            <div class="food-emoji">🍚</div>
+            <div class="food-name">Bhat & Daly</div>
+            <div class="food-desc">Rice & lentils, the foundation</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🐟</div>
+            <div class="food-name">Masor Jool</div>
+            <div class="food-desc">Tangy Tenga fish stew</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🌿</div>
+            <div class="food-name">Khar</div>
+            <div class="food-desc">Alkaline raw papaya prep</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🥔</div>
+            <div class="food-name">Alu Pitika</div>
+            <div class="food-desc">Mustard-spiced mash</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🎋</div>
+            <div class="food-name">Khorisa</div>
+            <div class="food-desc">Fermented bamboo shoots</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🌶️</div>
+            <div class="food-name">Bhut Jolokia</div>
+            <div class="food-desc">World's hottest ghost pepper</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🍖</div>
+            <div class="food-name">Khorika</div>
+            <div class="food-desc">Smoked or fire-grilled meat</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🌸</div>
+            <div class="food-name">Koldil</div>
+            <div class="food-desc">Banana flower curry</div>
+          </div>
+          <div class="food-item">
+            <div class="food-emoji">🍵</div>
+            <div class="food-name">Assam Tea</div>
+            <div class="food-desc">Malty, world-famous black tea</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="history">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Timeline</p>
+        <h2 class="section-title">Thousands of <em>Years</em> of History</h2>
+        <p class="section-desc">From prehistoric Stone Age settlements and the ancient Kamarupa kingdom to 600 years of
+          Ahom glory and eventual independence — Assam's history is as deep and mighty as the Brahmaputra River itself.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-era">c. 200 BCE – 4th Century CE</div>
+          <div class="timeline-title">Ancient Kamarupa</div>
+          <div class="timeline-body">The region (known as Kamarupa or Pragjyotisha) is mentioned in the Mahabharata.
+            Samudragupta's 4th-century Allahabad inscription records it as a frontier kingdom of the Gupta Empire.
+            Rock-cut stupas dated to 200 BCE show advanced civilisation. Chinese traveller Xuanzang visited during King
+            Bhaskaravarman's reign (c. 600–650 CE).</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-era">c. 350 – 1100 CE</div>
+          <div class="timeline-title">Three Great Dynasties</div>
+          <div class="timeline-body">Kamarupa was ruled successively by the Varmanas (c. 350–650 CE) from Guwahati, the
+            Mlechchha dynasty (c. 655–900 CE) from Tezpur, and the Kamarupa-Palas (c. 900–1100 CE) from North Gauhati.
+            The kingdom at its height spanned from the Karatoya River to Sadiya, covering the entire Brahmaputra Valley.
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-era">1228 CE</div>
+          <div class="timeline-title">Birth of the Ahom Kingdom</div>
+          <div class="timeline-body">The Tai-Ahoms under Sukapha crossed the Patkai Hills from Mong Mao (Yunnan, China)
+            with 9,000 men and established their kingdom in Upper Assam. In 1253, Sukapha founded the capital at
+            Charaideo — now a UNESCO World Heritage Site (Charaideo Maidams). The Ahoms would rule for nearly 600 years.
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-era">1671 CE</div>
+          <div class="timeline-title">Battle of Saraighat</div>
+          <div class="timeline-body">The legendary Ahom general Lachit Borphukan led a brilliant naval victory against
+            the Mughal forces on the Brahmaputra River, forcing a permanent Mughal retreat from Assam. This decisive
+            battle — one of India's great military victories — is celebrated each year on Lachit Divas (24 November).
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-era">1824 – 1826</div>
+          <div class="timeline-title">British Annexation</div>
+          <div class="timeline-body">After devastating Burmese invasions weakened the Ahom kingdom, the First
+            Anglo-Burmese War ended with the Treaty of Yandabo (1826), bringing Assam under British East India Company
+            control. Tea plantations subsequently proliferated in Eastern Assam, where the discovery of Camellia
+            sinensis assamica transformed the region's economy forever.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-era">1912</div>
+          <div class="timeline-title">Assam Province Established</div>
+          <div class="timeline-body">After being part of Bengal Presidency and Eastern Bengal and Assam Province, Assam
+            was reconstituted as a chief commissioners' province in 1912. The Assam Legislative Assembly was formed in
+            1937 in Shillong, the then-capital.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-era">1947 & 1950</div>
+          <div class="timeline-title">Independent India</div>
+          <div class="timeline-body">Assam joined independent India on 15 August 1947, with nationalist leader Gopinath
+            Bordoloi as the preeminent figure. The state was formally recognised on 26 January 1950 when India became a
+            republic. From its original vast territory, new states were carved out: Nagaland (1963), Meghalaya (1972),
+            Arunachal Pradesh and Mizoram (1972/1986).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section id="people">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Ethnic Diversity</p>
+        <h2 class="section-title">Many <em>Peoples</em>, One Assam</h2>
+        <p class="section-desc">Forty-five languages and over 115 ethnic groups make Assam one of the most culturally
+          diverse places on Earth. The earliest settlers were Austroasiatic and Dravidian peoples, followed by
+          Tibeto-Burman, Indo-Aryan, and Tai–Kadai groups across the millennia.</p>
+      </div>
+      <div class="people-grid">
+        <div class="people-card reveal">
+          <div class="people-emoji">👘</div>
+          <div class="people-group">Assamese</div>
+          <div class="people-desc">The dominant Indo-Aryan speaking group and Assam's linguistic majority. Assamese
+            (Ôxômiya) serves as the lingua franca for over 71% of the state's population.</div>
+        </div>
+        <div class="people-card reveal reveal-delay-1">
+          <div class="people-emoji">🏹</div>
+          <div class="people-group">Bodo-Kachari</div>
+          <div class="people-desc">The oldest Tibeto-Burman inhabitants including Bodos, Dimasas, Rabhas, and Tiwas.
+            Bodos account for 40% of the scheduled tribal population and have their own autonomous territorial council.
+          </div>
+        </div>
+        <div class="people-card reveal reveal-delay-2">
+          <div class="people-emoji">⛵</div>
+          <div class="people-group">Tai-Ahom</div>
+          <div class="people-desc">Descendants of the 13th-century Tai founders of the Ahom kingdom. Preserve ancient
+            Buranji manuscripts and practise the Me-Dam-Me-Phi ancestor veneration tradition.</div>
+        </div>
+        <div class="people-card reveal">
+          <div class="people-emoji">🌊</div>
+          <div class="people-group">Mising</div>
+          <div class="people-desc">A river-dwelling Tibeto-Burman people of the Brahmaputra valley, known for their
+            Ali-Ai-Ligang spring festival and beautifully handwoven traditional textiles.</div>
+        </div>
+        <div class="people-card reveal reveal-delay-1">
+          <div class="people-emoji">🎵</div>
+          <div class="people-group">Karbi</div>
+          <div class="people-desc">An indigenous Tibeto-Burman group of Karbi Anglong, known for their Rongker festival,
+            rich oral traditions, and having their own autonomous district council.</div>
+        </div>
+        <div class="people-card reveal reveal-delay-2">
+          <div class="people-emoji">☕</div>
+          <div class="people-group">Tea Garden Communities</div>
+          <div class="people-desc">Descendants of labourers brought from central and eastern India during the British
+            era, including Santali, Kurukh, and other Adivasi groups with vibrant Jhumair dance culture.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Languages</p>
+        <h2 class="section-title">A <em>Chorus</em> of Voices</h2>
+      </div>
+      <div class="lang-layout">
+        <div class="lang-bars reveal">
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Assamese</span><span class="lang-pct">48.4%</span>
+            </div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="48.4"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Bengali</span><span class="lang-pct">28.9%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="28.9"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Bodo</span><span class="lang-pct">4.51%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="4.51"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Hindi</span><span class="lang-pct">3.21%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="3.21"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Sadri</span><span class="lang-pct">2.29%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="2.29"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Mishing</span><span class="lang-pct">1.98%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="1.98"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Nepali</span><span class="lang-pct">1.91%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="1.91"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header"><span class="lang-name">Karbi</span><span class="lang-pct">1.64%</span></div>
+            <div class="lang-track">
+              <div class="lang-fill" data-width="1.64"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lang-info reveal reveal-delay-2">
+          <h3 class="section-title" style="font-size:30px;margin-bottom:20px">The <em>Language</em> of a Nation</h3>
+          <p>Assamese (Ôxômiya) is spoken by over 22 million total speakers in the state and serves as the lingua franca
+            of all of Northeast India. Its literary history stretches back to the 7th–8th century Charyapada poems. The
+            language is unique among Indo-Aryan languages for its voiceless velar fricative sound.</p>
+          <p>The language was standardised in the 19th century by American Baptist missionaries (Nathan Brown, Miles
+            Bronson) and Assamese scholars, based on the dialect of undivided Sivasagar district — the heart of the old
+            Ahom kingdom. Modern Assamese is language of extraordinary richness and softness.</p>
+          <p>Bodo is the second official language, spoken in western Assam and forming the administrative language of
+            the Bodoland Territorial Region. It is one of 22 languages in India's Eighth Schedule of the Constitution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELIGION -->
+  <section id="religion">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Faith & Belief</p>
+        <h2 class="section-title">A Tapestry of <em>Faiths</em></h2>
+        <p class="section-desc">From the ancient Shakti goddess Kamakhya to the neo-Vaishnavite movement of Sankaradeva
+          — Assam is a land where diverse religious traditions have coexisted and enriched one another for centuries.
+        </p>
+      </div>
+      <div class="religion-chart-wrap">
+        <div class="reveal">
+          <div class="donut-container">
+            <svg class="donut-svg" width="280" height="280" viewBox="0 0 280 280">
+              <circle cx="140" cy="140" r="100" fill="none" stroke="#c8902a" stroke-width="40"
+                stroke-dasharray="386.9 628.3" stroke-dashoffset="0" />
+              <circle cx="140" cy="140" r="100" fill="none" stroke="#2d5a27" stroke-width="40"
+                stroke-dasharray="214.9 628.3" stroke-dashoffset="-386.9" />
+              <circle cx="140" cy="140" r="100" fill="none" stroke="#1a4a6e" stroke-width="40"
+                stroke-dasharray="23.2 628.3" stroke-dashoffset="-601.8" />
+              <circle cx="140" cy="140" r="100" fill="none" stroke="#3d3d3d" stroke-width="40"
+                stroke-dasharray="3.3 628.3" stroke-dashoffset="-625" />
+            </svg>
+            <div class="donut-center">
+              <div class="donut-total">31.2M</div>
+              <div class="donut-sub">Total Pop.</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="religion-item">
+            <div class="rel-dot" style="background:#c8902a"></div>
+            <div class="rel-name">Hinduism</div>
+            <div class="rel-pct">61.5%</div>
+          </div>
+          <div class="religion-item">
+            <div class="rel-dot" style="background:#2d5a27"></div>
+            <div class="rel-name">Islam</div>
+            <div class="rel-pct">34.2%</div>
+          </div>
+          <div class="religion-item">
+            <div class="rel-dot" style="background:#1a4a6e"></div>
+            <div class="rel-name">Christianity</div>
+            <div class="rel-pct">3.7%</div>
+          </div>
+          <div class="religion-item">
+            <div class="rel-dot" style="background:#3d3d3d"></div>
+            <div class="rel-name">Buddhism, Jainism & Others</div>
+            <div class="rel-pct">0.6%</div>
+          </div>
+          <div style="margin-top:24px;padding:20px;background:var(--cream);border-left:3px solid var(--amber)">
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.7">The sacred Kamakhya Temple atop Nilachal
+              Hill in Guwahati is one of the holiest Shakti shrines in Hinduism, drawing pilgrims from across South Asia
+              for the annual Ambubachi Mela.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRAFTS -->
+  <section id="crafts">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Traditional Arts</p>
+        <h2 class="section-title">The <em>Craft</em> Traditions of Assam</h2>
+        <p class="section-desc">From the golden looms of Sualkuchi to the mask-makers of Majuli — Assam's craft
+          traditions are as ancient as its civilisation and as vibrant as its festivals.</p>
+      </div>
+      <div class="crafts-grid reveal">
+        <div class="craft-item">
+          <div class="craft-bg-emoji">🪡</div>
+          <div class="craft-tag">Geographical Indication</div>
+          <div class="craft-name">Muga Gold Silk</div>
+          <div class="craft-desc">The world's only naturally golden silk, produced solely in Assam. A legally protected
+            GI product and the most prestigious of Assam's three extraordinary silk varieties.</div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-bg-emoji">🔔</div>
+          <div class="craft-tag">Bell Metal & Brass</div>
+          <div class="craft-name">Xorai & Kahi</div>
+          <div class="craft-desc">Beautifully crafted bell-metal ritual vessels and plates found in every Assamese
+            household. Hajo and Sarthebari are the legendary, centuries-old centres of this living craft.</div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-bg-emoji">🎭</div>
+          <div class="craft-tag">Majuli Island</div>
+          <div class="craft-name">Mask Making</div>
+          <div class="craft-desc">The extraordinary tradition of crafting giant Satra masks of deities, demons, and
+            mythological beings for Ankia Naat Bhaona performances — alive for over 500 years.</div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-bg-emoji">🎋</div>
+          <div class="craft-tag">Daily Life</div>
+          <div class="craft-name">Cane & Bamboo</div>
+          <div class="craft-desc">Bamboo permeates every aspect of Assamese life — from household utensils and weaving
+            accessories to musical instruments, furniture, and construction materials.</div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-bg-emoji">📜</div>
+          <div class="craft-tag">Medieval Art</div>
+          <div class="craft-name">Manuscript Illustration</div>
+          <div class="craft-desc">Ancient illustrated manuscripts on Sanchipat bark, including the Hastividyarnava
+            (Treatise on Elephants) — masterpieces of Assamese painting from the Ahom era.</div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-bg-emoji">🏺</div>
+          <div class="craft-tag">Western Assam</div>
+          <div class="craft-name">Pottery & Terracotta</div>
+          <div class="craft-desc">Ancient pottery traditions producing utilitarian and decorative pieces, with
+            archaeological examples dating back to the Shunga-Kushana era of the 1st century BCE.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTABLE FIGURES -->
+  <section id="figures">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-label">Notable Figures</p>
+        <h2 class="section-title">Sons &amp; Daughters of <em>Assam</em></h2>
+        <p class="section-desc">From medieval saints and warrior-generals to 20th-century artists and writers — the
+          remarkable people of Assam have shaped not just their homeland but all of India.</p>
+      </div>
+      <div class="figures-row">
+        <div class="figure-card reveal">
+          <div class="figure-avatar">🙏</div>
+          <div class="figure-name">Srimanta Sankaradeva</div>
+          <div class="figure-role">Saint-Scholar</div>
+          <div class="figure-note">15th–16th century polymath who founded Sattriya dance, Ekasarana Dharma, and Namghar
+            tradition — transforming Assamese culture and society forever.</div>
+        </div>
+        <div class="figure-card reveal reveal-delay-1">
+          <div class="figure-avatar">⚔️</div>
+          <div class="figure-name">Lachit Borphukan</div>
+          <div class="figure-role">Military General</div>
+          <div class="figure-note">Legendary Ahom general who defeated the Mughals at the Battle of Saraighat (1671).
+            National hero, celebrated each year on Lachit Divas (24 November).</div>
+        </div>
+        <div class="figure-card reveal reveal-delay-2">
+          <div class="figure-avatar">🎵</div>
+          <div class="figure-name">Bhupen Hazarika</div>
+          <div class="figure-role">Music Maestro</div>
+          <div class="figure-note">Legendary singer, songwriter, and filmmaker who brought Assamese music to the world
+            stage. Recipient of India's highest civilian honour, the Bharat Ratna.</div>
+        </div>
+        <div class="figure-card reveal">
+          <div class="figure-avatar">✍️</div>
+          <div class="figure-name">Lakshminath Bezbaroa</div>
+          <div class="figure-role">Literary Giant</div>
+          <div class="figure-note">Called "Rasaraj" and "Sahityarathi" — the father of modern Assamese literature and
+            towering figure of 19th–20th century Assamese prose and poetry.</div>
+        </div>
+        <div class="figure-card reveal reveal-delay-1">
+          <div class="figure-avatar">🎨</div>
+          <div class="figure-name">Bishnu Prasad Rabha</div>
+          <div class="figure-role">Cultural Icon</div>
+          <div class="figure-note">Called "Kalaguru" (Master of Arts) — a multifaceted genius of music, dance, poetry,
+            and painting. The state's highest cultural award bears his name.</div>
+        </div>
+        <div class="figure-card reveal reveal-delay-2">
+          <div class="figure-avatar">🖊️</div>
+          <div class="figure-name">Mamoni Raisom Goswami</div>
+          <div class="figure-role">Novelist</div>
+          <div class="figure-note">Award-winning Assamese novelist and Jnanpith laureate, celebrated for her powerful
+            portrayals of Assamese society, history, and women's experiences.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">ASSAM</div>
+        <p class="footer-brand-sub">"The land of the Red River and Blue Hills, where the Brahmaputra runs eternal and
+          the tea gardens glow like emerald in the morning sun."</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Assam</a></li>
+          <li><a href="#nature">Nature & Scenery</a></li>
+          <li><a href="#wildlife">Wildlife</a></li>
+          <li><a href="#culture">Culture</a></li>
+          <li><a href="#festivals">Festivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Discover</div>
+        <ul class="footer-links">
+          <li><a href="#cuisine">Cuisine</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#crafts">Traditional Crafts</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Highlights</div>
+        <ul class="footer-links">
+          <li><a href="#wildlife">Kaziranga Park</a></li>
+          <li><a href="#wildlife">Manas Sanctuary</a></li>
+          <li><a href="#crafts">Muga Silk</a></li>
+          <li><a href="#festivals">Bihu Festival</a></li>
+          <li><a href="#culture">Sattriya Dance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Assam — Land of the Red River &amp; Blue Hills &nbsp;·&nbsp; Northeastern India</p>
+      <p class="footer-tagline">জয় আই অসম — Victory to Mother Assam</p>
+    </div>
+  </footer>
+
+  <script>
+    // HERO BACKGROUND IMAGE
+    // Place "hero.jpg" in the same folder as this HTML file
+    const heroBgImg = document.getElementById('heroBgImg');
+    const heroBg = document.getElementById('heroBg');
+    const testImg = new Image();
+    testImg.onload = function () {
+      heroBgImg.style.backgroundImage = 'url("hero.jpg")';
+      heroBg.style.opacity = '0.35'; // dim the gradient overlay when real image loads
+    };
+    testImg.onerror = function () {
+      heroBgImg.style.display = 'none'; // no hero.jpg found — use gradient only
+    };
+    testImg.src = 'hero.jpg';
+
+    // NAV
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // MOBILE MENU
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // TABS
+    function showTab(btn, id) {
+      document.querySelectorAll('.culture-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.culture-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + id).classList.add('active');
+    }
+
+    // SCROLL REVEAL
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // LANGUAGE BARS
+    const langObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.lang-fill').forEach(fill => {
+            fill.style.width = fill.getAttribute('data-width') + '%';
+          });
+          langObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    const langSec = document.querySelector('#languages');
+    if (langSec) langObs.observe(langSec);
+
+    // ACTIVE NAV HIGHLIGHT
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) cur = s.id; });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold-light)' : '';
+      });
+    });
+  </script>
+</body>
+
+</html>
